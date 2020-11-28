@@ -7,6 +7,7 @@ import Button from "./components/Button";
 
 function App() {
   const image = require("./assets/biscoito.png");
+  const opened = require("./assets/biscoitoAberto.png");
   const phrase = [
     { id: 1, text: "diringulendiu" },
     { id: 2, text: "muito mais interessante" },
@@ -15,6 +16,7 @@ function App() {
     { id: 5, text: "gkndsafsfent" },
   ];
   const [initial,setInitial] = useState(`"Abra o biscoito"`);
+  if(initial === `"Abra o biscoito"`){
   return (
     <div className="container">
       <Image image={image}/>
@@ -28,6 +30,22 @@ function App() {
       
     </div>
   );
+    }
+    else{
+      return (
+        <div className="container">
+          <Image image={opened}/>
+          <Phrase phrase={initial} />
+          <Button do={(e)=>{
+            const value = Math.floor((Math.random()* (0+5)-0));
+            console.log(value);
+            setInitial(phrase[value]["text"]);
+            e.preventDefault();
+          }}>Aperte</Button>
+          
+        </div>
+      );
+    }
 }
 
 export default App;
