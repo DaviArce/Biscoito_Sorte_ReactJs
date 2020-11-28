@@ -15,37 +15,42 @@ function App() {
     { id: 4, text: "asdlaasdas" },
     { id: 5, text: "gkndsafsfent" },
   ];
-  const [initial,setInitial] = useState(`"Abra o biscoito"`);
-  if(initial === `"Abra o biscoito"`){
-  return (
-    <div className="container">
-      <Image image={image}/>
-      <Phrase phrase={initial} />
-      <Button do={(e)=>{
-        const value = Math.floor((Math.random()* (0+5)-0));
-        console.log(value);
-        setInitial(phrase[value]["text"]);
-        e.preventDefault();
-      }}>Aperte</Button>
-      
-    </div>
-  );
-    }
-    else{
-      return (
-        <div className="container">
-          <Image image={opened}/>
-          <Phrase phrase={initial} />
-          <Button do={(e)=>{
-            const value = Math.floor((Math.random()* (0+5)-0));
+  const [initial, setInitial] = useState(`"Abra o biscoito"`);
+  if (initial === `"Abra o biscoito"`) {
+    return (
+      <div className="container">
+        <Image image={image} />
+        <Phrase phrase={initial} />
+        <Button
+          do={(e) => {
+            const value = Math.floor(Math.random() * (0 + 5) - 0);
             console.log(value);
             setInitial(phrase[value]["text"]);
             e.preventDefault();
-          }}>Aperte</Button>
-          
-        </div>
-      );
-    }
+          }}
+        >
+          Aperte
+        </Button>
+      </div>
+    );
+  } else {
+    return (
+      <div className="container">
+        <Image image={opened} />
+        <Phrase phrase={initial} />
+        <Button
+          do={(e) => {
+            const value = Math.floor(Math.random() * (0 + 5) - 0);
+            console.log(value);
+            setInitial(phrase[value]["text"]);
+            e.preventDefault();
+          }}
+        >
+          Aperte
+        </Button>
+      </div>
+    );
+  }
 }
 
 export default App;

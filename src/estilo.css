@@ -1,21 +1,21 @@
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   flex-direction: column;
 }
-.img{
+.img {
   width: 250px;
   height: 250px;
   margin-top: 50px;
 }
-.Phrase{
+.Phrase {
   font-style: italic;
   color: #dd7b22;
   text-align: center;
 }
-.button{
+.button {
   width: 250px;
   height: 35px;
   align-items: center;
